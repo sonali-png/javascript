@@ -1,0 +1,55 @@
+<!-- Creating html content through JS -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic content</title>
+    <style>
+        .main {
+            color: green;
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+    </div>
+
+
+    <script>
+
+        let para = document.createElement("p")
+
+        para.textContent = "Hello I am para generate through JS";
+        para.classList.add("main")
+
+        let div = document.querySelector(".container");
+
+        let btn = document.createElement("button");
+        btn.innerText = "Click Me";
+
+        para.appendChild(btn);
+        console.log(para);
+        para.append("Hello from append")
+
+        para.prepend(btn);
+        console.log(para);
+        div.append(para)
+
+        para.removeChild(btn);
+
+        // para.remove()
+        div.remove()
+        document.querySelector("body").remove()
+
+
+
+    </script>
+</body>
+
+</html>
